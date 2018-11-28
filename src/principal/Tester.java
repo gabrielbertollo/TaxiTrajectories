@@ -33,9 +33,6 @@ public class Tester {
 		testeMongo.save(list);
 		testeMongo.consulta(list);
 		
-		DadosTaxi dados = new DadosTaxi();
-		String[] arquivos = dados.getFileNames();
-		System.out.println("Teste com: " + arquivos.length + " arquivos.");
 		System.out.println(list.size() + " registros.");
 		
 	}

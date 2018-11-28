@@ -38,14 +38,13 @@ public class Mongo {
 	}
 
 	public void consulta(List<LeitorArquivos> list) {
-		FindIterable<Document> iterable = null;
+		FindIterable<Document> iterable;
 		MongoCollection<Document> colecao = db.getCollection("LeitorArquivos");
 		
 		Cronometro.start();
 		for (LeitorArquivos lt : list) {
 			iterable = colecao.find(new Document().append("longitude",
 					lt.getLongitude()).append("latitude", lt.getLatitude()));
-			
 			}
 		Cronometro.stop();
 		System.out.println("Consulta: "+Cronometro.tempoMilissegundos()+"ms");
